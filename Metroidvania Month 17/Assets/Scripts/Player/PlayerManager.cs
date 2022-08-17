@@ -5,29 +5,34 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour {
 
     private PlayerController controller;
-    private PlayerCamera playerCamera;
+    private PlayerInteract interact;
+    public PlayerCamera cam;
 
     public void Start() {
 
         controller = GetComponent<PlayerController>();
         controller.OnStart();
 
-        playerCamera = FindObjectOfType<PlayerCamera>();
-        playerCamera.OnStart();
+        interact = FindObjectOfType<PlayerInteract>();
+        interact.OnStart(this);
+
+        cam = FindObjectOfType<PlayerCamera>();
+        cam.OnStart();
 
     }
 
     public void Update() {
 
         controller.OnUpdate();
-        playerCamera.OnUpdate();
+        interact.OnUpdate();
+        cam.OnUpdate();
 
     }
 
     public void FixedUpdate(){
 
         controller.OnFixedUpdate();
-        playerCamera.OnFixedUpdate();
+        cam.OnFixedUpdate();
         
     }
 
