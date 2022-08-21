@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour {
 
     public Transform body;
 
+    public Hitbox hitbox;
+
     private Rigidbody2D rigidBody;
     
     private float horizontalInput;
@@ -27,6 +29,8 @@ public class PlayerController : MonoBehaviour {
 
     private bool isJumping;
     private bool onGround;
+
+    private int attackOffset = 1;
 
     public void OnStart() {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -39,9 +43,11 @@ public class PlayerController : MonoBehaviour {
 
         if(horizontalInput > 0) {
             body.transform.localScale = new Vector3(1,body.transform.localScale.y,body.transform.localScale.z);
+            attackOffset = 1;
         }
         else if(horizontalInput < 0) {
             body.transform.localScale = new Vector3(-1,body.transform.localScale.y,body.transform.localScale.z);
+            attackOffset = -1;
         }
 
         if(Input.GetButton("Sprint") && onGround) {
@@ -55,6 +61,10 @@ public class PlayerController : MonoBehaviour {
 
         if(Input.GetButtonDown("Jump") && onGround) {
             isJumping = true;
+        }
+
+        if(Input.GetButtonDown("Attack")) {
+            Instantiate(hitbox,new Vector3(body.transform.position.x+attackOffset,body.transform.position.y,body.transform.position.z),hitbox.transform.localRotation,transform);
         }
         
     }

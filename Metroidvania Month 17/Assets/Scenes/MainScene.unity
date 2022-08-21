@@ -1568,9 +1568,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1338036331150930343, guid: 5ad4f773187273c4bae45a9549e0268c, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338036331150930343, guid: 5ad4f773187273c4bae45a9549e0268c, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338036331651345828, guid: 5ad4f773187273c4bae45a9549e0268c, type: 3}
+      propertyPath: hitbox
+      value: 
+      objectReference: {fileID: -771554231822495488, guid: e68559e3b8a061d48a554eb66d1332b7, type: 3}
     - target: {fileID: 1338036331651345831, guid: 5ad4f773187273c4bae45a9549e0268c, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338036331651345831, guid: 5ad4f773187273c4bae45a9549e0268c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1338036331651345851, guid: 5ad4f773187273c4bae45a9549e0268c, type: 3}
       propertyPath: m_RootOrder
